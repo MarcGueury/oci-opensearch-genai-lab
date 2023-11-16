@@ -19,7 +19,7 @@ Estimated Workshop Time: 90 minutes
 
 ### Architecture
 
-![Architecture](images/opensearch-architecture.png)
+![Architecture](images/opensearch-architecture-genai.png)
 
 It works like this:
 1. A document is uploaded in the Object Storage by the user
