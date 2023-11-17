@@ -146,7 +146,7 @@ Double-check that the private\_key\_rsa_format.pem is really in RSA format like 
 1. In the search user interface, enter *jazz* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
 ![Test Result](images/opensearch-vb-test-result.png)
 
-1. Try the same with *Semantic Search*, *RAG* and *Generate*. Compare the results.
+1. Try the same with the question "when was jazz created" with *Search*, *Semantic Search*, *RAG* and *Generate*. Compare the results.
    
 1. Notice the search results contain the file name, an excerpt of the text extracted from the file (although the full text is searchable), the file type, and the topic classification provided by the OCI Language AI service. You can click the file name to display it.
     
