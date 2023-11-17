@@ -148,10 +148,6 @@ Double-check that the private\_key\_rsa_format.pem is really in RSA format like 
 
 1. Try the same with the question "when was jazz created" with *Search*, *Semantic Search*, *RAG* and *Generate*. Compare the results.
    
-1. Notice the search results contain the file name, an excerpt of the text extracted from the file (although the full text is searchable), the file type, and the topic classification provided by the OCI Language AI service. You can click the file name to display it.
-    
-    **Note - since most web browsers don't natively display .tif files, if you attempt to open a .tif in the search results, you will be prompted to download it. You can then view it with an application on your local computer, if you have an app that can view .tif files.**
-
 1. If you performed the optional task at the end of the previous lab and processed the additional files, you can query for those now. Here's some hints on words you can search for each of the provided documents. You can also search on *"\*"* to see all indexed documents.
 
     | Search Terms |
@@ -161,13 +157,10 @@ Double-check that the private\_key\_rsa_format.pem is really in RSA format like 
     | When was jazz created | RAG |
     | When was jazz created | Generate |
     | When was the moon created | Search |
-    | When was jazz created | Semantic Search |
-    | When was jazz created | RAG |
-    | When was jazz created | Generate |
-    | Penguins.jpg | animal, beak, bird, penguin |
-
-
-
+    | When was the moon created | Semantic Search |
+    | When was the moon created | Generate |
+    | When was the moon created | RAG |
+    | Penguin | Search |
 
 
 **Congratulations! You have completed this workshop.**
