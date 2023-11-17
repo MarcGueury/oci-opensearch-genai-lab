@@ -143,27 +143,29 @@ Double-check that the private\_key\_rsa_format.pem is really in RSA format like 
 1. Click the **run** button on the top right of the Visual Builder page. The Visual Builder application user interface will appear in a new browser tab.
 ![Run the application](images/opensearch-vb-test.png)
 
-1. In the search user interface, enter *candle* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
+1. In the search user interface, enter *jazz* and click **Search**. This will return a record for the file that was processed by OCI Document Understanding AI service to extract text from the image file so that it could be made searchable.
 ![Test Result](images/opensearch-vb-test-result.png)
 
+1. Try the same with *Semantic Search*, *RAG* and *Generate*. Compare the results.
+   
 1. Notice the search results contain the file name, an excerpt of the text extracted from the file (although the full text is searchable), the file type, and the topic classification provided by the OCI Language AI service. You can click the file name to display it.
     
     **Note - since most web browsers don't natively display .tif files, if you attempt to open a .tif in the search results, you will be prompted to download it. You can then view it with an application on your local computer, if you have an app that can view .tif files.**
 
 1. If you performed the optional task at the end of the previous lab and processed the additional files, you can query for those now. Here's some hints on words you can search for each of the provided documents. You can also search on *"\*"* to see all indexed documents.
 
-    | File | Search Terms |
+    | Search Terms |
     | ------------------------------------- | --------------------------------------- |
-    | Image\_Map\_Brazil.png | brasil, rio |
-    | Image\_Workshop\_architecture.png | streaming, "object storage" |
-    | Invoice\_6879875\_scanned.tif | 6879875, bijou, 111.31 |
-    | Invoice\_DS67076\_scanned.pdf | ds67076, champaign, pcanywhere, 709.63 |
-    | Text\_DocU\_blog\_HTML\_to\_PDF.pdf | blogs.oracle.com, datascience |
-    | Text\_DocU\_Overview\_PPTX\_to\_PDF.pdf | harbor, "product direction" |
-    | Voice\_SupportRobot.mp3 | headphones, bluetooth, "consumer electronics", yesterday |
-    | Shakespeare\_macbeth.tif | shakespeare, macbeth, candle, shadow |
+    | When was jazz created | Search |
+    | When was jazz created | Semantic Search |
+    | When was jazz created | RAG |
+    | When was jazz created | Generate |
+    | When was the moon created | Search |
+    | When was jazz created | Semantic Search |
+    | When was jazz created | RAG |
+    | When was jazz created | Generate |
     | Penguins.jpg | animal, beak, bird, penguin |
-    | HOL\_summary.txt | workshop, oic, "document understanding" |
+
 
 
 
