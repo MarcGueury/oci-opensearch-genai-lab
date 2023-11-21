@@ -109,7 +109,7 @@ Note: If you have just created your Cloud Account, it is possible that you need 
 1. Continue to next task. You do not have to wait for Visual Builder to be installed before continuing.
 
 
-## Task 7: Run a Terraform script to create the other components.
+## Task 4: Run a Terraform script to create the other components.
 
 1. Go to the OCI console homepage
 2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
