@@ -113,26 +113,26 @@ Note: If you have just created your Cloud Account, it is possible that you need 
 
 1. Go to the OCI console homepage
 2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
-1. In the code editor menu, click *Terminal* then *New Terminal*
-1. Run the command below in the terminal
+3. In the code editor menu, click *Terminal* then *New Terminal*
+4. Run the command below in the terminal
     ![Menu Compute](images/opensearch-terraform1.png =50%x*)
     ````
     <copy>
     git clone https://github.com/mgueury/oci-genai-searchlab.git
     </copy>
     ````
-3. Edit the file *oci-genai-searchlab/starter/env.sh*
+5. Edit the file *oci-genai-searchlab/starter/env.sh*
     1. Click the **Explorer** icon in the left bar of the code editor
     1. Use Explorer to locate env.sh
     1. Click env.sh to open it in the editor
-1. In env.sh, replace the value **##OIC\_OCID##** with the corresponding value from your text file.
+6. In env.sh, replace the value **##OIC\_OCID##** with the corresponding value from your text file.
     ````
     <copy>
     export TF_VAR_oic_ocid="##OIC_OCID##"
     </copy>
     ````
-1. Save your edits using File > Save
-4. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
+7. Save your edits using File > Save
+8. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
     ```
     <copy>
     cd oci-genai-searchlab/starter/
@@ -153,12 +153,9 @@ Note: If you have just created your Cloud Account, it is possible that you need 
     ./build.sh
     </copy>
     ````
-5. **Please proceed to the [next lab](#next) while Terraform is running.** 
-
+9. **Please proceed to the [next lab](#next) while Terraform is running.** 
     Do not wait for the Terraform script to finish because it takes about 34 minutes and you can complete some steps in the next lab while it's running. However, you will need to come back to this lab when it is done and complete the next step.
-
-
-6. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
+10. When Terraform will finished, you will see settings that you need in the next lab. Save these to your text file. It will look something like:
 
     ```
     --------------------------
@@ -221,10 +218,6 @@ Operation Name: CreateOpensearchCluster
 ```
 
 In such case, just rerunning ./build.sh fixed the issue.
-
-3. There are a lot of potential IDCS configuration. Sometimes for IDCS skipped by SSO, it is necessary to add 
-
-When you have a IDCS associate 
 
 
 ## Acknowledgements
