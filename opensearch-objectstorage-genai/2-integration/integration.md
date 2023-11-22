@@ -25,10 +25,10 @@ You will need the Oracle integration Cloud (OIC) package, the Visual Builder (VB
 To download the files to your laptop from the Github website, please follow these steps.
 ````
 
-1. In a new tab or window of your Intenet browser, go to https://github.com/mgueury/oci-searchlab/tree/main and click *Code* and then *Download ZIP*.
+1. In a new tab or window of your Intenet browser, go to https://github.com/mgueury/oci-genai-searchlab/tree/main and click *Code* and then *Download ZIP*.
 ![GitHub_Download](images/opensearch-github-download-zip.png)
 
-1. Extract the oci-searchlab-main.zip file to your computer. 
+1. Extract the oci-genai-searchlab-main.zip file to your computer. 
 ![GitHub_Download](images/opensearch-github-extract-zip.png) 
 
 1. Note the directory contains the Oracle Integration Cloud (OIC) package in the ***oic*** folder, the Visual Builder (VB) application in the ***vb*** folder, and samples files in the ***sample_files*** folder.
@@ -162,7 +162,7 @@ We start with the public connections first because these don't depend on compone
 1. In OCI Console Cloud Shell, if the terraform output is not there anymore, you can get it back like this: 
     ```
     <copy>
-    oci-searchlab/starter/src/after_done.sh
+    oci-genai-searchlab/starter/src/after_done.sh
     </copy>
     ```
     1. In the output of this script look for the following values under the heading **-- STREAMING CONNECTION --------------------------**:
@@ -174,7 +174,7 @@ We start with the public connections first because these don't depend on compone
 1. Click the **Cloud Shell Menu icon** and select *Download*.
 ![CloudShell_Download](images/opensearch-cloudshell-download.png)
 
-1. Enter the file name: *oci-searchlab/starter/oss_store.jks* and click **Download**.
+1. Enter the file name: *oci-genai-searchlab/starter/oss_store.jks* and click **Download**.
 ![CloudShell_Download2](images/opensearch-cloudshell-download3.png)
 
 1. Go to the OIC console and click the **edit** icon on the same row as *StreamInputBucket*.
@@ -198,7 +198,7 @@ We start with the public connections first because these don't depend on compone
 
 ### 8. RestFunction
 1. Use the **##FUNCTION_ENDPOINT##** value you saved to your text file to fill in the Connection details:
-    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-searchlab/starter/src/search_env.sh)
+    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-genai-searchlab/starter/src/search_env.sh)
     - Connection Type = *REST API Base URL*
     - Connection url = **##FUNCTION_ENDPOINT##** (without /action/invoke at the end)
         - ex: https://xxxx.eu-frankfurt-1.functions.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.eu-frankfurt-1.aaaaaaabbbbb
@@ -214,7 +214,7 @@ We start with the public connections first because these don't depend on compone
 
 ### 9. RestOpenSearch
 1. Use the **##OPENSEARCH\_API\_ENDPOINT##** value you saved to your text file to fill in the Connection details:
-    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-searchlab/starter/src/search_env.sh)
+    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-genai-searchlab/starter/src/search_env.sh)
     - Connection Type = *REST API Base URL*
     - Connection url = *##OPENSEARCH\_API\_ENDPOINT##*
         - ex: https://amamamamalllllaaac5vkwantypqqcs4bqrgqjrkvuxxghsmg7zzzzzxxxxx.opensearch.eu-frankfurt-1.oci.oraclecloud.com:9200
@@ -263,7 +263,7 @@ You will load a file into object storage which will be ingested by OIC, processe
         1. Enter the file name: 
         ```
         <copy>
-        oci-searchlab/sample_files/shakespeare_macbeth.tif
+        oci-genai-searchlab/sample_files/shakespeare_macbeth.tif
         <\copy>
         ```
         ![CloudShell_Download2](images/opensearch-cloudshell-download4.png)

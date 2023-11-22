@@ -102,7 +102,7 @@ Double-check that the private\_key\_rsa_format.pem is really in RSA format like 
 ![Connection OpenSearch](images/opensearch-vb-connection-opensearch.png)
 
 1. Use the ***APIGW_URL*** value you saved to your text file to fill in the Connection details:
-    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-searchlab/starter/src/search_env.sh)
+    - (If you need to get the value, run this command in OCI Console Cloud Shell: oci-genai-searchlab/starter/src/search_env.sh)
 
 1. Configure the server as follows:
     - Replace Instance URL: *APIGW_URL*

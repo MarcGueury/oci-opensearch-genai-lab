@@ -118,10 +118,10 @@ Note: If you have just created your Cloud Account, it is possible that you need 
     ![Menu Compute](images/opensearch-terraform1.png =50%x*)
     ````
     <copy>
-    git clone https://github.com/mgueury/oci-searchlab.git
+    git clone https://github.com/mgueury/oci-genai-searchlab.git
     </copy>
     ````
-3. Edit the file *oci-searchlab/starter/env.sh*
+3. Edit the file *oci-genai-searchlab/starter/env.sh*
     1. Click the **Explorer** icon in the left bar of the code editor
     1. Use Explorer to locate env.sh
     1. Click env.sh to open it in the editor
@@ -135,7 +135,7 @@ Note: If you have just created your Cloud Account, it is possible that you need 
 4. Run each of the three commands below in the Terminal, one at a time. It will run Terraform to create the rest of the components.
     ```
     <copy>
-    cd oci-searchlab/starter/
+    cd oci-genai-searchlab/starter/
     </copy>
     ```
     ```
@@ -193,7 +193,7 @@ oci_core_instance.starter_instance: Creating..
   Suggestion: The service for this resource encountered an error. Please contact support for help with service: Core Instance
 ```
 
-Solution:  edit the file *oci-searchlab/starter/src/terraform/variable.tf* and replace the *instance_shape*
+Solution:  edit the file *oci-genai-searchlab/starter/src/terraform/variable.tf* and replace the *instance_shape*
 ```
 OLD: variable instance_shape { default = "VM.Standard.E3.Flex" }
 NEW: variable instance_shape { default = "VM.Standard.A1.Flex" }
@@ -222,7 +222,9 @@ Operation Name: CreateOpensearchCluster
 
 In such case, just rerunning ./build.sh fixed the issue.
 
+3. There are a lot of potential IDCS configuration. Sometimes for IDCS skipped by SSO, it is necessary to add 
 
+When you have a IDCS associate 
 
 
 ## Acknowledgements
