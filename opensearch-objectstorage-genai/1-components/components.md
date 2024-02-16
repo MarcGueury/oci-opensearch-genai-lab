@@ -108,8 +108,23 @@ Note: If you have just created your Cloud Account, it is possible that you need 
 
 1. Continue to next task. You do not have to wait for Visual Builder to be installed before continuing.
 
+## Task 4: Get the OIC AppID (ClientID)
 
-## Task 4: Run a Terraform script to create the other components.
+To enable Resource Principal, you need the OIC APPID.
+
+1. Go the console 3-bar/hamburger menu and select
+    1. Identity & Security 
+    1. Domains (under Identity)
+    ![Menu Domain](images/opensearch-oic-domain.png)
+2. Choose the *Default (Current domain)* domain
+3. On the left, choose *Oracle Cloud Services*
+    ![OIC Domain](images/opensearch-oic_service.png)
+4. Scroll down until that you see a name like *oic-xxx-xxxx* and the *Description* is *Integration Cloud Service*, then **click on it**
+5. In the Service details, look for *Client ID* under *General Information*
+    - Copy the value to your text file at *##OIC\_APPID##*. It will be of the something like 668BEAAAA904B7EBBBBBBC5E33943B\_APPID
+    ![OIC Domain](images/opensearch-oic_appid.png)
+
+## Task 5: Run a Terraform script to create the other components.
 
 1. Go to the OCI console homepage
 2. Click the *Developer Tools* icon in the upper right of the page and select *Code Editor*. Wait for it to load.
@@ -143,9 +158,9 @@ Note: If you have just created your Cloud Account, it is possible that you need 
     bin/gen_auth_token.sh
     </copy>
     ```
-    You should see the following in the results of the *gen_auth_token.sh* script:
-    - AUTH_TOKEN stored in env.sh
-    - TF_VAR_auth_token= 'a generated token'
+    You should see the following in the results of the *gen\_auth\_token.sh* script:
+    - AUTH\_TOKEN stored in env.sh
+    - TF\_VAR\_auth\_token='a generated token'
 
     
     ````
