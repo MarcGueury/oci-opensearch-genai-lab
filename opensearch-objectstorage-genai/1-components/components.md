@@ -140,10 +140,11 @@ To enable Resource Principal, you need the OIC APPID.
     1. Click the **Explorer** icon in the left bar of the code editor
     1. Use Explorer to locate env.sh
     1. Click env.sh to open it in the editor
-6. In env.sh, replace the value **##OIC\_OCID##** with the corresponding value from your text file.
+6. In env.sh, replace the ## with the corresponding value from your text file.
     ````
     <copy>
     export TF_VAR_oic_ocid="##OIC_OCID##"
+    export TF_VAR_oic_appidd="##OIC_APPID##"
     </copy>
     ````
 7. Save your edits using File > Save

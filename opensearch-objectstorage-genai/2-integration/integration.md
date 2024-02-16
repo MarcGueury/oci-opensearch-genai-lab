@@ -76,8 +76,12 @@ We start with the public connections first because these don't depend on compone
 1. Fill the Connection details:
     - Connection Type = *REST API Base URL*
     - Connection URL = *##AI\_GENAI\_URL##*
-        - ex: https://generativeai.aiservice.us-chicago-1.oci.oraclecloud.com
-    - Security policy = *OCI Service Invocation*
+        - ex: https://inference.generativeai.us-chicago-1.oci.oraclecloud.com
+    - Security policy = * OCI Signature Version 1*
+    - Tenancy OCID = ##TENANCY_OCID##
+    - User OCID = ##USER_OCID##
+    - Private KEY = ##PRIVATE_API_KEY##
+    - FingerPrint = ##FingerPrint##
     - Access Type = *Public gateway*
 1. *Save / Test / Save* until 100%
 
