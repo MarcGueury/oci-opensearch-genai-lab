@@ -33,7 +33,47 @@ To download the files to your laptop from the Github website, please follow thes
 
 1. Note the directory contains the Oracle Integration Cloud (OIC) package in the ***oic*** folder, the Visual Builder (VB) application in the ***vb*** folder, and samples files in the ***sample_files*** folder.
 
-## Task 2: Import the integration
+## Task 1: User and Tenancy details
+
+First, we need data about your tenancy and user.
+- On the top, right, click *Tenancy: name*
+- Copy the tenancy OCID *##TENANCY\_OCID##*
+
+![Tenancy](images/opensearch-tenancy.png)
+
+Then, we need data about the user
+- On the top, right, click *Your username*
+- Copy the username *##USERNAME##* (without oracleidentitycloudservice )
+- Copy the user OCID *##USER\_OCID##*
+- Click on *API Keys*
+
+![User](images/opensearch-user.png)
+
+- Click *Add API Key*
+- Generate one
+- Download it *##PRIVATE_KEY##*
+- Copy the *##FINGERPRINT##*
+
+![User API Keys](images/opensearch-user2.png)
+
+In your computer (NOT in cloud shell), you need to convert the PEM key to RSA format:
+- Run the below command 
+- And keep the ##PRIVATE\_KEY\_RSA\_FORMAT##
+
+```
+openssl rsa -in ##PRIVATE_KEY## -out ##PRIVATE_KEY_RSA_FORMAT##
+ex: openssl rsa -in private_key.pem -out private_key_rsa_format.pem
+````
+
+Double-check that the private\_key\_rsa_format.pem is really in RSA format like this:
+
+```
+-----BEGIN RSA PRIVATE KEY-----
+...
+-----END RSA PRIVATE KEY-----
+```
+
+## Task 3: Import the integration
 Upload the integration configuration into OIC.
 
 1. Open the OIC Service console. If you were logged out, use the following steps to re-open it. 
@@ -48,7 +88,7 @@ Upload the integration configuration into OIC.
 1. Click: *Import and Configure*
     ![Import Package](images/opensearch-oic-package-import.png)
 
-## Task 3: Configure the OIC connections
+## Task 4: Configure the OIC connections
 We start with the public connections first because these don't depend on component provisioning that is being completed in the previous lab by the Terraform script.
 
 ### 1. RestObjectStorage
@@ -63,7 +103,7 @@ We start with the public connections first because these don't depend on compone
     - Connection Type = *REST API Base URL*
     - Connection URL = *##OS\_URL##*
         - ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com
-    - Security policy = *OCI Service Invocation*
+    - Security policy = *No Security*
     - Access Type = *Public gateway*
 1. **Test / Save / Save** until 100%
 1. Go back to the list of connections. The remainder of the connections are configured in a similar manner.
@@ -80,8 +120,8 @@ We start with the public connections first because these don't depend on compone
     - Security policy = * OCI Signature Version 1*
     - Tenancy OCID = ##TENANCY_OCID##
     - User OCID = ##USER_OCID##
-    - Private KEY = ##PRIVATE_API_KEY##
-    - FingerPrint = ##FingerPrint##
+    - Private KEY = ##PRIVATE_KEY_RSA_FORMAT##
+    - FingerPrint = ##FINGERPRINT##
     - Access Type = *Public gateway*
 1. *Save / Test / Save* until 100%
 
@@ -231,7 +271,7 @@ We start with the public connections first because these don't depend on compone
 
 1. Go back to the list of connections
 
-## Task 4. Activate the integration
+## Task 5. Activate the integration
 
 1. All connections should be valid. To activate the integrations,
 click on **Activation** 
@@ -249,7 +289,7 @@ click on **Activation**
 1. Confirm all integrations are *Active*.
 ![Activate3](images/opensearch-oic-activation3.png)
 
-## Task 5: Test OIC
+## Task 6: Test OIC
 You will load a file into object storage which will be ingested by OIC, processed with AI, and loaded into the OpenSearch index. (You'll query for this file in the next lab.)
 
 1. In the OCI Console, select the 3-bar/hamburger menu and select
@@ -258,7 +298,7 @@ You will load a file into object storage which will be ingested by OIC, processe
 
     ![Test OIC](images/opensearch-oic-test-os-buckets.png)
 
-1. In the *Buckets* list, select **opensearch-bucket**.
+1. In the *Buckets* list, select **search-public-bucket**.
     ![Test OIC](images/opensearch-oic-test-opensearch-bucket.png)
 
 1. On your local computer, go to the directory that you previously downloaded from GITHUB
@@ -291,10 +331,10 @@ You will load a file into object storage which will be ingested by OIC, processe
 
     The **Succeeded** count should match the **Received** count.
 
-## Task 6: Optional - Process additional files
+## Task 7: Optional - Process additional files
 This is an optional test you can run with more sample files. If you do this test, you will have more content in the OpenSearch index to query in the next lab. If you're running short of time, then you can skip it or come back to it later.
 
-1. Upload the remainder of the sample files to the Object Storage bucket *opensearch-bucket*, the same way you uploaded them in the previous task. In the Git clone, the files are located in the *sample_files* folder. (You might need to download them first using the Cloud Shell if you didn't clone the git repo to your local machine.)
+1. Upload the remainder of the sample files to the Object Storage bucket *search-public-bucket*, the same way you uploaded them in the previous task. In the Git clone, the files are located in the *sample_files* folder. (You might need to download them first using the Cloud Shell if you didn't clone the git repo to your local machine.)
 
 1. To check the instances in OIC, go to OIC Console and select
     1. Menu *Observability* 

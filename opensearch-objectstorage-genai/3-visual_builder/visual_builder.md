@@ -13,47 +13,7 @@ Estimated time: 20 min
 ### Prerequisites
 - You've completed the previous labs
 
-## Task 1: User and Tenancy details
-
-First, we need data about your tenancy and user.
-- On the top, right, click *Tenancy: name*
-- Copy the tenancy OCID *##TENANCY\_OCID##*
-
-![Tenancy](images/opensearch-tenancy.png)
-
-Then, we need data about the user
-- On the top, right, click *Your username*
-- Copy the username *##USERNAME##* (without oracleidentitycloudservice )
-- Copy the user OCID *##USER\_OCID##*
-- Click on *API Keys*
-
-![User](images/opensearch-user.png)
-
-- Click *Add API Key*
-- Generate one
-- Download it *##PRIVATE_KEY##*
-- Copy the *##FINGERPRINT##*
-
-![User API Keys](images/opensearch-user2.png)
-
-In your computer (NOT in cloud shell), you need to convert the PEM key to RSA format:
-- Run the below command 
-- And keep the ##PRIVATE\_KEY\_RSA\_FORMAT##
-
-```
-openssl rsa -in ##PRIVATE_KEY## -out ##PRIVATE_KEY_RSA_FORMAT##
-ex: openssl rsa -in private_key.pem -out private_key_rsa_format.pem
-````
-
-Double-check that the private\_key\_rsa_format.pem is really in RSA format like this:
-
-```
------BEGIN RSA PRIVATE KEY-----
-...
------END RSA PRIVATE KEY-----
-```
-
-## Task 2: Import the project
+## Task 1: Import the project
 1. You will need the VB application archive *opensearch-1.0.x.zip* for the next task. If you cloned the Git repo to your local computer in a previous lab, you will already have this file. This file is located in the *visual_builder* folder of the cloned repo. You can continue to the next task.
 
 1. Go to the Oracle Integration Cloud (OIC) service console home page. If this is not already open in one of your browser tabs, you can get back to it by following these steps.
@@ -86,7 +46,7 @@ Double-check that the private\_key\_rsa_format.pem is really in RSA format like 
         ![Visual Builder Import](images/opensearch-vb-import.png)
     1. Wait for the import to be confirmed
 
-## Task 3: Edit the connections
+## Task 2: Edit the connections
 
 1. From the Visual Applications list, open the imported application by clicking on the application name, **opensearch**
 ![Visual Builder Import](images/opensearch-vb-applications.png)
@@ -138,7 +98,7 @@ Double-check that the private\_key\_rsa_format.pem is really in RSA format like 
 8. *Save*
 9. *Save*
 
-## Task 4: Test the application
+## Task 3: Test the application
 
 1. Click the **run** button on the top right of the Visual Builder page. The Visual Builder application user interface will appear in a new browser tab.
 ![Run the application](images/opensearch-vb-test.png)
